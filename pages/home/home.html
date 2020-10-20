@@ -1,34 +1,35 @@
 <ion-header>
-	<ion-navbar>
-		<ion-title>Home</ion-title>
-	</ion-navbar>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-	<ion-list>
-		<ion-list-header>
-			<ion-label>
-				Single Selection
-			</ion-label>
-		</ion-list-header>
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label> </ion-label>
+    </ion-list-header>
 
-		<ion-item>
-			<ion-label>Gender</ion-label>
-			<ion-select placeholder="Select One">
-				<ion-option value="f">Female</ion-option>
-				<ion-option value="m">Male</ion-option>
-			</ion-select>
-		</ion-item>
+    <ion-item>
+      <ion-label>Countries</ion-label>
+      <ion-select placeholder="Select One">
+        <ion-select-option *ngFor="let country of country_list"
+          >{{country}}</ion-select-option
+        >
+        <ion-select-option value="m">Male</ion-select-option>
+      </ion-select>
+    </ion-item>
 
-		<ion-item>
-			<ion-label>Hair Color</ion-label>
-			<ion-select value="brown" okText="Okay" cancelText="Dismiss">
-				<ion-option value="brown">Brown</ion-option>
-				<ion-option value="blonde">Blonde</ion-option>
-				<ion-option value="black">Black</ion-option>
-				<ion-option value="red">Red</ion-option>
-			</ion-select>
-		</ion-item>
+    <ion-item padding>
+      <ion-label>Zone</ion-label>
+      <ion-select value="brown" okText="Okay" cancelText="Dismiss">
+        <ion-select-option value="brown">South</ion-select-option>
+        <ion-select-option value="blonde">North</ion-select-option>
+        <ion-select-option value="black">East</ion-select-option>
+        <ion-select-option value="red">West</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
 
-	</ion-list>
+  <ion-button expand="full" (click)="clickOn()">Apply Filter</ion-button>>
 </ion-content>
